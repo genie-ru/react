@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Div Example</title>
+    <style>
+        /* 視覚的にわかりやすくするためのスタイル */
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: lightblue;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- コンテナとして機能する div 要素 -->
+    <div id="container"></div>
+
+    <script>
+        var container = document.getElementById('container');
+
+        for (let i = 0; i < 10; i++) {
+            let div = document.createElement('div'); // 新しい div を作成
+            div.classList.add('box'); // 見た目を整えるためのクラスを追加
+            div.onclick = function() {
+                alert('You clicked on div ' + i);
+            };
+            container.appendChild(div); // container に追加
+        }
+    </script>
+</body>
+</html>
